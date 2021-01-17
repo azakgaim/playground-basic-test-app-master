@@ -1,0 +1,24 @@
+<div class="search-container">
+  <form id="searchForm" #searchForm="ngForm" (ngSubmit)="searchPatient(searchForm)" class="">
+    <div class="search-bar">
+      <label for="name">Name:</label>
+      <input id="name"
+             name="name"
+             [(ngModel)]="model.name" #name="ngModel"
+             pattern="[A-Za-z]+"
+             type="text" class="input-field" placeholder="name" required>
+      <span *ngIf="name.invalid && (name.dirty || name.touched)">Only alphbetical characters allowered</span>
+    </div>
+    <div class="search-bar">
+      <label for="dateOfBirth">DOB:</label>
+      <input id="dateOfBirth"
+             name="dateOfBirth"
+             [(ngModel)]="model.dateOfBirth" #dateOfBirth="ngModel"
+             pattern="^\d{4}\/(0[1-9]|1[012])\/(0[1-9]|[12][0-9]|3[01])$"
+             type="text" class="input-field" placeholder="YYYY/MM/DD" required>
+      <span *ngIf="dateOfBirth.invalid && (name.dirty || name.touched)">Format should match YYYY/MM/DD</span>
+    </div>
+
+    <button class="" type="submit" [disabled]="searchInProgress">Search</button>
+  </form>
+</div>

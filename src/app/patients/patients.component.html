@@ -1,0 +1,32 @@
+
+<!-- class="patient-container" -->
+<div>
+  <!-- <h1>List of Patients</h1>
+  <hr> -->
+
+  <!-- <app-search-bar></app-search-bar> -->
+
+  <div class="thumb-container" *ngFor="let patient of patients">
+    <div class="thumb-child-label">
+      <div>Id:</div>
+      <div>Name: </div>
+      <div>Url:</div>
+      <div>Type:</div>
+      <div>Gender:</div>
+      <div>DOB:</div>
+    </div>
+    <div>
+      <div>{{patient?.id}}</div>
+      <div>{{patient?.name}}</div>
+      <div>{{patient?.fullUrl}}</div>
+      <div>{{patient?.resourceType}}</div>
+      <div>{{patient?.gender}}</div>
+      <div>{{patient?.birthDate}}</div>
+    </div>
+  </div>
+</div>
+
+
+<div class="footer">
+  Request time {{elapsedTime}} ms
+</div>
